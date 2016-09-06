@@ -32,20 +32,31 @@ public class PlayerScript : MonoBehaviour {
 		rb.AddForce (movement * speed);
 		float y = moveHorizontal * 0.1f;
 
+		if (Input.GetKey (KeyCode.E)) {
+			jumpEnergy += 0.19f;
+
+		}
+
+		else if (Input.GetKey (KeyCode.Q)) {
+			jumpEnergy -= 0.19f;
+
+		}
+
+
 		rb.AddTorque(transform.up * y);
 		//rb.AddTorque(transform.right * x);
 		if (Input.GetKey (KeyCode.Space)) {
-			jumpEnergy += 0.09f;
+			jumpEnergy += 0.19f;
 		} 
 		else {
-			jumpEnergy -= 0.09f;
+			//jumpEnergy -= 0.09f;
 		}
 
-		if (jumpEnergy < 0) {
-			jumpEnergy = 0;
+		if (jumpEnergy < -3) {
+			jumpEnergy = -3;
 		}
 		if (jumpEnergy > 3f) {
-			jumpEnergy = 2f;
+			jumpEnergy = 3f;
 		}
 		SetText();
 
