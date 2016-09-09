@@ -56,6 +56,9 @@ namespace UnityStandardAssets.Vehicles.Ball
                 // we use world-relative directions in the case of no main camera
                 move = (v*Vector3.forward + h*Vector3.right).normalized;
             }
+
+
+
         }
 
 
